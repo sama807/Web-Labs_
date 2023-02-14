@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create_Contact</title>
+</head>
+<body>
+     <center>
+        <h1>Contact Form</h1>
+        <p>Fill this form to create new contact</p>
+      <form action="/save_data" method = "post">
+            <label>Name:</label>
+            <input type = "text" required name = "name">
+            <br><br>
+            <label>Mobile No:</label>
+            <input type = "tel" required name = "Mobile no">
+            <br><br>
+            <label>City:</label>
+            <input type = "text" required name = "City">
+            <br><br>
+            <label>Profession:</label>
+            <input type = "text" required name = "Profession">
+            <br><br>
+            <input type = "submit" name = "submit" value = "submit">
+        </form>
+<p style="color: blue ; font-size:18px" >{{ msg }}</p>
+     <h3>If you want to show contact. Click on the Link below:</h3>
+    <a href="/show">Show Contact</a>
+      <br>
+    <h3>If you want to search the contact. Click on the Link below:</h3>
+    <a href="/search_form">Search Contact</a>
+
+
+
+</body>
+</html>

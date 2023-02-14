@@ -1,0 +1,21 @@
+.mycontainer{
+    font-weight: bold;
+    text-align: center;
+    font-style: italic;
+    background-color:lightcoral;
+    color:white;
+}
+#myBtn{
+    margin-top:3%;
+    margin-left: 1%;
+    background-color:lightcoral;
+    width:10%;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+#show{
+    margin-top:2%;
+    border-color: lightcoral;
+}
+

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <title>signup</title>
+    <style>
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .field {
+            border-style: solid; 
+            border-width: 1px; 
+            border-radius: 3px;
+            margin-left: 15px;
+            width: 270px;
+            padding: 8px;
+            font-size: 15px;
+            /* margin-bottom: 15px; */
+            
+        }
+        .button {
+            background-color: coral;
+            color: white;
+            border-style: hidden;
+            border-radius: 5px;
+            max-width:90px;
+            width:70px;
+            height: 20px;
+            margin-left: 35vh;
+            margin-top: 14px;
+            font-size: 17.5px;
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 6px;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+        
+        @keyframes button {
+            100%{ 
+                background-color: rgb(247, 101, 48);
+                margin-top: 12px;
+                height: 23px;
+                width: 75px;
+                margin-left: 34.5vh;
+                font-size: 18.5px;
+                padding-top: 7px;
+            }    
+        }
+        .button:hover{   
+            animation: button 100ms 0ms forwards ease-in-out;
+        }
+        #submit{
+            margin-top: 5px;
+            height: 30px;
+            font-size: 16px;
+        }
+        @keyframes submit {
+            100%{ 
+                background-color: rgb(247, 101, 48);
+                margin-top: 3px;
+                height: 35px;
+                width: 75px;
+                margin-left: 34.5vh;
+                font-size: 18.5px;
+                padding-top: 7px;
+            }    
+        }
+        #submit:hover{
+            animation: submit 100ms 0ms forwards ease-in-out;
+        }
+        #f1{
+            margin-left: 4%;
+            display: grid; 
+            grid-template-columns: 0.35fr 0.35fr 0.35fr; 
+            grid-gap: 0px; 
+        }
+        div.formDiv{
+            display:none;
+            background-color: #ffffff; 
+            width: 350px; 
+            height: 330px;
+            margin-top: 0%; 
+            padding-left: 30px; 
+            padding-top: 20px;
+            justify-content: center; 
+            border-style: hidden; 
+            border-radius: 7px; 
+            box-shadow: 2px 2px 10px black
+        }
+        .exist_msgs{
+            margin-top: 0px; 
+            margin-bottom: 5px; 
+            font-size: 15px;
+            color:rgb(224, 30, 30);
+            margin-left: 40px;
+            
+        }
+        select{
+            margin-bottom: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+<body style="background-image: url(../static/images/soulMatebg.png); background-size: 100%; background-repeat: no-repeat;">
+    <h1 style="font-size:80px; text-align: center; font-style: italic; font-family:cursive; color: rgb(255, 255, 255); margin-bottom: 30px; margin-top:30px;">SOULMATE</h1>
+    <form id="f1" method="post">
+        <div id="1" class="formDiv" style="display: block;">
+            <h2 style="padding-left: 95px">Account info</h2>
+            <input class="field" type="email" name="email" placeholder="email" required>
+            <div id="email_br"><br></div>
+            <p id="email_status" class="exist_msgs"></p>
+            <input class="field" type="text" name="username" placeholder="username" required>
+            <div id="username_br"><br></div>
+            <p id="username_status" class="exist_msgs" ></p>
+            <input class="field" type="password" name="password" id="password" placeholder="password" required><br><br>
+            <input class="field" type="password" name="confirmPassword" placeholder="confirm password" required>
+            <div id="pass_br"></div>
+            <p id="status" class="exist_msgs"></p>
+            <p id="b1" class="button" onclick="document.getElementById('2').style.display='block';  document.getElementById('b1').style.display='none';">continue</p>
+        </div>
+        
+        <div id="2" class="formDiv">  
+            <h2 style="padding-left: 95px">Identification</h2>
+            <input class="field" type="text" name="firstName" placeholder="first name" required><br><br>
+            <input class="field" type="text" name="lastName" placeholder="last name" ><br><br>
+            <input class="field" type="number" name="CNIC" placeholder="CNIC" required>
+            <div id="CNIC_br"><br></div>
+            <p id="CNIC_status" class="exist_msgs"></p>
+            <input class="field" type="text" name="countryCode" value="+92" disabled style="width: 8%;height: 31px; padding:0px">
+            <input class="field" style="width:221px" type="number" name="phoneNumber" placeholder="mobile number" >
+            <p id="b2" class="button" onclick="document.getElementById('3').style.display='block';  document.getElementById('b2').style.display='none';">continue</p>
+        </div>
+
+        <div id="3" class="formDiv">
+            <h2 style="padding-left: 111px">Personal</h2>
+            <label style="margin-left:35px" for="gender">Gender:</label>
+            <select name="gender">
+                <option>Male</option>
+                <option>Female</option>
+            </select><br>
+            <label style="margin-left:39px" for="height">Height:</label>
+            <select name="height">
+                <option>less than 3</option>
+                <option>3 to 3.11</option>
+                <option>4 to 4.11</option>
+                <option>5 to 6</option>
+                <option>greater than 6</option>
+            </select><br>
+            <label style="margin-left:55px" for="cast">Cast:</label>
+            <select name="cast">
+                <option>Butt</option>
+                <option>Rajpoot</option>
+                <option>Arain</option>
+                <option>Jutt</option>
+                <option>Malik</option>
+                <option>Bhatti</option>
+                <option>Sheikh</option>
+                <option>Mughal</option>
+                <option>Other</option>
+            </select><br>
+            <label style="margin-left: 15px;" for="profession">Profession:</label>
+            <select name="profession">
+                <option>Doctor</option>
+                <option>Business Man</option>
+                <option>Chartered Accountant</option>
+                <option>Teacher</option>
+                <option>Govt. Employee</option>
+                <option>Freelancer</option>
+                <option>Other</option>
+            </select><br>
+            <label style="margin-left:25px" for="relegion">Relegion:</label>
+            <select name="relegion">
+                <option>Islam</option>
+                <option>Christianity</option>
+                <option>Sikh</option>
+                <option>Other</option>
+            </select><br>
+            <label style="margin-left:55px" for="city">City:</label>
+            <select name="city">
+                <option>Lahore</option>
+                <option>Gujranwala</option>
+                <option>Sialkot</option>
+                <option>Islamabad</option>
+                <option>Shahkot</option>
+                <option>Pindi</option>
+                <option>Bahawalpur</option>
+                <option>Daska</option>
+                <option>Multan</option>
+                <option>Karachi</option>
+                <option>Sargodha</option>
+            </select><br>
+            <label for="dob">Date of birth:</label>
+            <input type="date" name="dob" required><br><br>
+            <input class="button" id="submit" type="submit" value="signup" name="signup">
+        </div>
+        
+    </form>
+    <script>
+        $(document).ready(function(){
+            $("#submit").on('click', function(e){
+                var formdata = $("#f1").serializeArray();
+                var data = {};
+                $(formdata ).each(function(index, obj){
+                    data[obj.name] = obj.value;
+                });
+                
+                if(data['email']=="" || data['username']=="" ||data['password']=="" ||data['confirmPassword']=="" ||data['firstName']=="" ||data['CNIC']=="" ||data['dob']=="")
+                {
+                    return
+                }
+
+                if(data['phoneNumber'].length!=10)
+                {
+                    
+                }
+
+                e.preventDefault()
+                data=JSON.stringify(data)                
+                $.ajax({
+                    url: '/api/user', // url where to submit the request
+                    type : "POST", // type of action POST || GET
+                    data : data, // post data || get data
+                    dataType : 'json',
+                    contentType: "application/json; charset=utf-8",
+    
+                    success : function(result) {
+                        console.log(result)
+                        
+                        if(result.error=="E")
+                        {
+                            document.getElementById('pass_br').style.display='block'
+                            $("#status").html("")
+                            document.getElementById('username_br').style.display='block'
+                            $("#username_status").html("")
+                            document.getElementById('CNIC_br').style.display='block'
+                            $("#CNIC_status").html("")
+                            
+                            document.getElementById('email_br').style.display='none'
+                            $("#email_status").html("Email already exists")
+                            return
+                        }
+                        else if(result.error=="U")
+                        {
+                            document.getElementById('pass_br').style.display='block'
+                            $("#status").html("")
+                            document.getElementById('CNIC_br').style.display='block'
+                            $("#CNIC_status").html("")
+                            document.getElementById('email_br').style.display='block'
+                            $("#email_status").html("")
+                            
+                            document.getElementById('username_br').style.display='none'
+                            $("#username_status").html("Username already exists")
+                            return
+                        }
+                        else if(result.error=="C")
+                        {
+                            document.getElementById('pass_br').style.display='block'
+                            $("#status").html("")
+                            document.getElementById('username_br').style.display='block'
+                            $("#username_status").html("")
+                            document.getElementById('CNIC_br').style.display='none'
+                            $("#CNIC_status").html("CNIC already exists")
+                            
+                            document.getElementById('email_br').style.display='block'
+                            $("#email_status").html("")
+                            return
+                        }
+                        else if(result.error=="P")
+                        {
+                            document.getElementById('username_br').style.display='block'
+                            $("#username_status").html("")
+                            document.getElementById('CNIC_br').style.display='block'
+                            $("#CNIC_status").html("")                           
+                            document.getElementById('email_br').style.display='block'
+                            $("#email_status").html("")
+
+                            document.getElementById('pass_br').style.display='none'
+                            $("#status").html("Password does not matched")
+                            return
+                        }
+                        else if(result.error=="EU")
+                        {
+                            document.getElementById('pass_br').style.display='block'
+                            $("#status").html("")
+                            document.getElementById('CNIC_br').style.display='block'
+                            $("#CNIC_status").html("")
+                            
+                            document.getElementById('username_br').style.display='none'
+                            $("#username_status").html("Username already exists")
+                            document.getElementById('email_br').style.display='none'
+                            $("#email_status").html("Email already exists")
+                            return
+                        }
+                        else if(result.error=="EC")
+                        {
+                            document.getElementById('pass_br').style.display='block'
+                            $("#status").html("")
+                            document.getElementById('username_br').style.display='block'
+                            $("#username_status").html("")
+
+                            document.getElementById('CNIC_br').style.display='none'
+                            $("#CNIC_status").html("CNIC already exists")
+                            document.getElementById('email_br').style.display='none'
+                            $("#email_status").html("Email already exists")
+                            return
+                        }
+                        else if(result.error=="EP")
+                        {
+                            document.getElementById('pass_br').style.display='none'
+                            $("#status").html("Password does not matched")
+                            document.getElementById('username_br').style.display='block'
+                            $("#username_status").html("")
+
+                            document.getElementById('CNIC_br').style.display='block'
+                            $("#CNIC_status").html("")
+                            document.getElementById('email_br').style.display='none'
+                            $("#email_status").html("Email already exists")
+                            return
+                        }
+                        else if(result.error=="UC")
+                        {
+                            document.getElementById('email_br').style.display='block'
+                            $("#email_status").html("")
+                            document.getElementById('pass_br').style.display='block'
+                            $("#status").html("")
+
+                            document.getElementById('username_br').style.display='none'
+                            $("#username_status").html("Username already exists")
+                            document.getElementById('CNIC_br').style.display='none'
+                            $("#CNIC_status").html("CNIC already exists")
+                            return
+                        }
+                        else if(result.error=="UP")
+                        {
+                            document.getElementById('pass_br').style.display='none'
+                            $("#status").html("Password does not matched")
+                            document.getElementById('username_br').style.display='none'
+                            $("#username_status").html("Username already exists")
+
+                            document.getElementById('CNIC_br').style.display='block'
+                            $("#CNIC_status").html("")
+                            document.getElementById('email_br').style.display='block'
+                            $("#email_status").html("")
+                            return
+                        }
+                        else if(result.error=="CP")
+                        {
+                            document.getElementById('pass_br').style.display='none'
+                            $("#status").html("Password does not matched")
+                            document.getElementById('username_br').style.display='block'
+                            $("#username_status").html("")
+
+                            document.getElementById('CNIC_br').style.display='none'
+                            $("#CNIC_status").html("CNIC already exists")
+                            document.getElementById('email_br').style.display='block'
+                            $("#email_status").html("")
+                            return
+                        }
+                        else if(result.error=="EUC")
+                        {
+                            document.getElementById('email_br').style.display='none'
+                            $("#email_status").html("Email already exists")
+                            document.getElementById('pass_br').style.display='block'
+                            $("#status").html("")
+
+                            document.getElementById('username_br').style.display='none'
+                            $("#username_status").html("Username already exists")
+                            document.getElementById('CNIC_br').style.display='none'
+                            $("#CNIC_status").html("CNIC already exists")
+                            return
+                        }
+                        else if(result.error=="EUP")
+                        {
+                            document.getElementById('email_br').style.display='none'
+                            $("#email_status").html("Email already exists")
+                            document.getElementById('pass_br').style.display='none'
+                            $("#status").html("Password does not matched")
+
+                            document.getElementById('username_br').style.display='none'
+                            $("#username_status").html("Username already exists")
+                            document.getElementById('CNIC_br').style.display='block'
+                            $("#CNIC_status").html("")
+                            return
+                        }
+                        else if(result.error=="ECP")
+                        {                            
+                            document.getElementById('email_br').style.display='none'
+                            $("#email_status").html("Email already exists")
+                            document.getElementById('pass_br').style.display='none'
+                            $("#status").html("Password does not matched")
+
+                            document.getElementById('username_br').style.display='block'
+                            $("#username_status").html("")
+                            document.getElementById('CNIC_br').style.display='none'
+                            $("#CNIC_status").html("CNIC already exists")
+                            return
+                        }
+                        else if(result.error=="UCP")
+                        {
+                            document.getElementById('email_br').style.display='block'
+                            $("#email_status").html("")
+                            document.getElementById('pass_br').style.display='none'
+                            $("#status").html("Password does not matched")
+
+                            document.getElementById('username_br').style.display='none'
+                            $("#username_status").html("Username already exists")
+                            document.getElementById('CNIC_br').style.display='none'
+                            $("#CNIC_status").html("CNIC already exists")
+                            return
+                        }
+                        else if(result.error=="EUCP")
+                        {
+                            document.getElementById('email_br').style.display='none'
+                            $("#email_status").html("Email already exists")
+                            document.getElementById('pass_br').style.display='none'
+                            $("#status").html("Password does not matched")
+
+                            document.getElementById('username_br').style.display='none'
+                            $("#username_status").html("Username already exists")
+                            document.getElementById('CNIC_br').style.display='none'
+                            $("#CNIC_status").html("CNIC already exists")
+                            return
+                        }
+                        document.getElementById('email_br').style.display='block'
+                        $("#email_status").html("")
+                        document.getElementById('pass_br').style.display='block'
+                        $("#status").html("")
+                        document.getElementById('username_br').style.display='block'
+                        $("#username_status").html("")
+                        document.getElementById('CNIC_br').style.display='block'
+                        $("#CNIC_status").html("")
+                        window.location.href='/verify'
+                    },
+                    error: function(xhr, resp, text) {
+                         console.log(xhr, resp, text);
+                    }
+                })
+    
+            });
+        });
+        </script>
+</body>
+</html>

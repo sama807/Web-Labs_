@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/d0613fcace.js" crossorigin="anonymous"></script>
+    <title>profile</title>
+    <style>
+        #pic{
+            visibility: visible;
+            height:200px;
+            width:200px;
+            border:18px solid coral;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 15px;
+            animation-name: example;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            animation-delay: 0s;
+            animation-iteration-count: 1;
+        }
+        #picDiv{
+            /* border-style:hidden; */
+            border-radius:30px;
+            height:500px;
+            width:232px;
+            padding:28px 36px 10px;
+            margin:70px 0px 0px 520px;
+            background-color: white; 
+            box-shadow: 0px 0px 50px white;
+            animation-name: example;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes example {
+
+        }
+        p{
+            color:rgb(218, 77, 26);
+            font-size: larger;
+            margin-left:10px;
+        }
+        #submit{
+            background-color: coral;
+            color: white;
+            border-style: hidden;
+            border-radius: 5px;
+            max-width:90px;
+            width:77px;
+            height: 25px;
+            margin-left: 12vh;
+            margin-top: 14px;
+            font-size: 17.5px;
+            text-align: center;
+            padding-top: 2px;
+            padding-bottom: 6px;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+        @keyframes submit {
+            100%{ 
+                background-color: rgb(247, 101, 48);
+                margin-top: 12px;
+                height: 29px;
+                width: 85px;
+                margin-left: 11.5vh;
+                font-size: 18.5px;
+                padding-top: 3px;
+            }    
+        }
+        #submit:hover{
+            animation: submit 100ms 0ms forwards ease-in-out;
+        }
+        #icon{
+            position:absolute;
+            color: rgb(236, 236, 236);
+            margin-left: 152px;
+            margin-top:195px;
+        }
+        #img{
+            position: absolute;
+            margin-left: 152px;
+            margin-top:201px;
+            height: 25px;
+            width: 32px;
+            opacity:0;
+        }
+    </style>
+</head>
+<body style="background-color: coral;">
+    <div id="picDiv">
+        <form id="myForm" action="/profile" method="post" enctype="multipart/form-data">
+            <i id="icon" class="fa-solid fa-camera fa-2x"></i>
+            <input onchange="submitForm();" type="file" id="img" name="img" accept="image/*">
+            <img id="pic" src={{pic}}>
+            <P><b>{{name}}</b></P>
+            <P><b>{{uname}}</b></P>
+            <P><b>{{gender}}</b></P>
+            <P><b>{{email}}</b></P>
+            <input type="submit" id="submit" name="submit" value="continue">
+        </form>
+    </div>
+    <script type='text/javascript'> 
+        function submitForm(){ 
+          // Call submit() method on <form id='myform'>
+          document.getElementById('myForm').submit(); 
+        } 
+    </script>
+    <!-- <script>
+        // // $(document).ready(function(){
+        // //     $("#img").on('change',function(){
+        // //         document.getElementById("myForm").submit();
+        // //     })
+        // // })
+        // const fileInput = document.getElementById('img');
+        // const form = document.getElementById('myForm');
+
+        // fileInput.addEventListener('change', () => {
+        //     form.submit();
+        // });
+    </script> -->
+</body>
+</html>

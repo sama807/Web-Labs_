@@ -1,0 +1,106 @@
+body
+{
+    background-image: url('../images/soulMatebg.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding:0;
+    margin:0;
+    width: 100%;
+
+}
+.container
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:90vh;
+
+}
+.title-box
+{
+    width:500px;
+}
+.title-box img
+{
+    width:250px;
+}
+.title-box p
+{
+    color:black;
+    font-size: 16px;
+}
+.form-box
+{
+    width:350px;
+    padding:15px;
+    text-align: center;
+    border-radius: 5px;
+    background: white;
+    margin-left: 60px;
+    height: 327px;
+    box-shadow: 1px 1px 10px black;
+}
+.form-box input
+{
+    width:100%;
+    margin-bottom: 15px;
+    padding:10px;
+    border-radius: 5px;
+}
+.form-box button
+{
+    width:100%;
+    padding:5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color:white;
+    background:chocolate;
+    border-radius: 5px;
+    border-width: 0px;
+    height: 40px;
+
+}
+.form-box a:hover
+{
+    text-decoration: underline;
+}
+.form-box a
+{
+    background:white;
+    color:chocolate;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 20px;
+
+}
+.form-box hr
+{
+    border:1px solid white;
+    margin-bottom: 15px;
+
+}
+.form-box .create-btn a
+{
+    color:white;
+    font-size: 16px;
+    padding: 15px;
+    padding-bottom: 14px;
+    background: green;
+    text-decoration: none;
+    border-radius: 5px;
+    height: 30px;
+}
+.form-box .create-btn a:hover
+{
+     background:green;
+}
+#msg{   
+    margin-bottom: 0px;
+    color:darkred;
+}
+i{
+    margin-left: -30px;
+    cursor: pointer;
+}

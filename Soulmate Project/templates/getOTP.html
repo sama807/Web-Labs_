@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recoverAccount2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../static/Css/getOTP.css">
+
+    
+</head>
+<body>
+    <div class="container-fluid mycontainer">
+        <div class="row">
+            <div class="col-4">
+                <img src="../static/images/soulMate.png">
+            </div>
+        </div> 
+    </div>
+    <form action="/getOtp" method="POST">
+        <img id="myImg" src="../static/images/mail.png" class="img-fluid" alt="Responsive image">
+        <h2>Check your mail</h2>
+        <hr>
+        <p id="para">We have sent a password recover instructions to your email.</p>
+        <input type="text" class="otp" name="otp" placeholder="Enter OTP">
+        <button id="verify">Verify</button>
+        <div class="myfooter">
+            <p>Did not receive email?Check your spam filter</p>
+        </div>
+
+    </form>
+
+<p id="mymsg" style= >{{ msg }}</p>
+    
+</body>
+</html>

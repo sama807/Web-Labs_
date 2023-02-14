@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>verify email</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../static/Css/getOTP.css">
+
+    
+</head>
+<body>
+    <div class="container-fluid mycontainer">
+        <div class="row">
+            <div class="col-4">
+                <img src="../static/images/soulMate.png">
+            </div>
+        </div> 
+    </div>
+    <form id="form" action="/verify" method="POST">
+        <img id="myImg" src="../static/images/mail.png" class="img-fluid" alt="Responsive image">
+        <h2>Check your mail</h2>
+        <hr>
+        <p id="para">We have sent an OTP for email verification.</p>
+        <input type="text" class="otp" name="otp" placeholder="Enter OTP" required><br>
+        <p id="error" style="font-size: small; margin-left: 90px;color:red;margin-bottom: 0px;"></p>
+        <button id="verify">Verify</button>
+        <div class="myfooter">
+            <p>Did not receive email?Check your spam filter</p>
+        </div>
+        
+    </form>
+    <script>
+        $(document).ready(function(){
+            $("#verify").on('click', function(e){
+                var formdata = $("#form").serializeArray();
+                var data = {};
+                
+                $(formdata ).each(function(index, obj){
+                    data[obj.name] = obj.value;
+                });
+                if(data['otp']=="" )
+                {
+                    return
+                }
+                e.preventDefault()
+
+                data=JSON.stringify(data)                
+                $.ajax({
+                    url: '/api/verify', // url where to submit the request
+                    type : "POST", // type of action POST || GET
+                    data : data, // post data || get data
+                    dataType : 'json',
+                    contentType: "application/json; charset=utf-8",
+    
+                    success : function(result) {
+                        console.log(result)
+                        if(result.error=="OTP is not verified")
+                        {
+                            //document.getElementById('error').style.display='none'
+                            $("#error").html("OTP is not verified")
+                            return
+                        }
+                        window.location.href="/profile"
+                    },
+                    error: function(xhr, resp, text) {
+                         console.log(xhr, resp, text);
+                    }
+                })
+    
+            });
+        });
+        </script>
+</body>
+</html>

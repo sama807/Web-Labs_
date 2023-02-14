@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Address Book</title>
+</head>
+<body>
+    <h1>Contacts</h1>
+    <table border = "2">
+        <tr>
+            <th>Contact Id</th>
+            <th>Contact Name</th>
+            <th>Mobile Number</th>
+            <th>City</th>
+            <th>Profession</th>
+        </tr>
+        {% for c in data %}
+
+        <tr>
+            <td>{{ c[0] }}</td>
+            <td>{{ c[1] }}</td>
+            <td>{{ c[2] }}</td>
+            <td>{{ c[3] }}</td>
+            <td>{{ c[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h3>If you want to store the new contact. Click on the Link below:</h3>
+    <a href="/">Create Contact</a>
+    <br>
+    <h3>If you want to search the contact. Click on the Link below:</h3>
+    <a href="/search_form">Search Contact</a>
+</body>
+</html>

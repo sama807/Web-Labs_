@@ -1,0 +1,63 @@
+
+body{
+
+    /* padding: 0;
+    margin:0; */
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    height:100vh;
+    background:white;
+
+}
+.container{
+
+    width:45%;
+    height: 45%;
+    padding:10px;
+    border-radius: 8px;
+    box-shadow: 12px 12px 20px gainsboro,
+             -12px 12px 20px gainsboro ;
+
+}
+.cal #textfield{
+    width: 99%;
+    height:60px;
+    padding-right: 0.5em;
+    font-size:medium;
+    border: none;
+    outline:none;
+    background:#ecf0f3;
+    box-shadow: 8px 8px 8px white,
+                -8px -8px 8px white;
+    text-align: right;
+
+}
+.btns{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    margin-top:8px;
+    
+}
+.btns .row button{
+    width:50px;
+    height:30px;
+    font-size: 16px;
+    border: none;
+    margin:5px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px rgb(137, 133, 133);
+                
+
+}
+#ac
+{
+    background-color: rgb(14, 137, 96);
+    color:#ecf0f3
+}
+#equal
+{
+    background-color: rgb(43, 16, 110);
+    color:#ecf0f3
+}
