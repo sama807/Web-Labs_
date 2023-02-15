@@ -1,3 +1,0 @@
-
-class invalidname(Exception):
-    pass
